@@ -1,0 +1,17 @@
+﻿@using ViewModels
+@model IList<Option>
+@{ 
+    var gameId = ViewData["GameId"]; 
+}
+
+    @foreach (var option in Model)
+            {
+        <div >
+            <div class="col-md-7">
+                <ul>@option.Text : @option.ScoreValue points</ul>
+            </div>
+            <div class="col-md-5">
+                @Html.ActionLink("Choose", "PlayTurn", "Game", new { optionId = option.OptionsId, optionValue = option.ScoreValue }, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    }

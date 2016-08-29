@@ -1,0 +1,156 @@
+﻿@model ViewModels.GameViewModel
+@{
+    ViewBag.Title = "Played games";
+}
+
+<h2>Played Games</h2>
+<div class="row">
+    @if (Model.GameScoresExtra[0].GameScore.ScoreTotal > Model.GameScoresExtra[1].GameScore.ScoreTotal)
+    {
+        <div class="alert alert-info" role="alert">You've won the game! Congratiulations @Model.MyName .</div>
+    }
+    else
+    {
+        <div class="alert alert-info" role="alert">@Model.OpponentName won this game.</div>
+    }
+</div>
+ <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                        <tr>
+                            <th>Sections</th>
+                            <th>@Model.MyName</th>
+                            <th>@Model.OpponentName</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td>UPPER SECTION</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Only Aces</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreAces</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreAces</td>
+                        </tr>
+                        <tr>
+                            <td>Only Twos</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreTwos</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreTwos</td>
+                        </tr>
+                        <tr>
+                            <td>Only Threes</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreThrees</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreThrees</td>
+                        </tr>
+                        <tr>
+                            <td>Only Fours</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreFours</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreFours</td>
+                        </tr>
+                        <tr>
+                            <td>Only Fives</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreFives</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreFives</td>
+                        </tr>
+                        <tr>
+                            <td>Only Sixes</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreSixes</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreSixes</td>
+                        </tr>
+                        <tr>
+                            <td>TOTAL</td>
+                            <td>@Model.GameScoresExtra[0].NumberTotal</td>
+                            <td>@Model.GameScoresExtra[1].NumberTotal</td>
+                        </tr>
+                        <tr>
+                            <td>+ 63 = 35 Bonus</td>
+                            <td>@Model.GameScoresExtra[0].Bonus</td>
+                            <td>@Model.GameScoresExtra[1].Bonus</td>
+                        </tr>
+                        <tr>
+                            <td>UPPER TOTAL</td>
+                            <td>@Model.GameScoresExtra[0].UpperTotal</td>
+                            <td>@Model.GameScoresExtra[1].UpperTotal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td>LOWER SECTION</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3 of a kind Total</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreThreeOfAKind</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreThreeOfAKind</td>
+                        </tr>
+                        <tr>
+                            <td>4 of a kind Total</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreFourOfAKind</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreFourOfAKind</td>
+                        </tr>
+                        <tr>
+                            <td>Full House = 25</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreFullHouse</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreFullHouse</td>
+                        </tr>
+                        <tr>
+                            <td>Small Straight = 30</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreSmallStraight</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreSmallStraight</td>
+                        </tr>
+                        <tr>
+                            <td>Large Straight = 40</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreLargeStraight</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreLargeStraight</td>
+                        </tr>
+                        <tr>
+                            <td>YATHZEE</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreYathzee</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreYathzee</td>
+                        </tr>
+                        <tr>
+                            <td>Chance TOTAL</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreChance</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreChance</td>
+                        </tr>
+                        <tr>
+                            <td>LOWER TOTAL</td>
+                            <td>@Model.GameScoresExtra[0].LowerTotal</td>
+                            <td>@Model.GameScoresExtra[1].LowerTotal</td>
+                        </tr>
+                        <tr>
+                            <td>UPPER TOTAL</td>
+                            <td>@Model.GameScoresExtra[0].UpperTotal</td>
+                            <td>@Model.GameScoresExtra[1].UpperTotal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td>UPPER TOTAL</td>
+                            <td>@Model.GameScoresExtra[0].GameScore.ScoreTotal</td>
+                            <td>@Model.GameScoresExtra[1].GameScore.ScoreTotal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>

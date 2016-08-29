@@ -1,0 +1,11 @@
+﻿
+@{
+    if (HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LogOutLayout.cshtml";
+    }
+}

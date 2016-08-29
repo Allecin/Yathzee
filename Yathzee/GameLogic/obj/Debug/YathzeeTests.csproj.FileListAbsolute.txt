@@ -1,0 +1,16 @@
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\GameLogic.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\GameLogic.pdb
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\BL.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\ViewModels.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\DAL.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\Domain.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\EntityFramework.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\BL.pdb
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\ViewModels.pdb
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\DAL.pdb
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\Domain.pdb
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\bin\Debug\EntityFramework.xml
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\obj\Debug\YathzeeTests.csprojResolveAssemblyReference.cache
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\obj\Debug\GameLogic.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\GameLogic\obj\Debug\GameLogic.pdb

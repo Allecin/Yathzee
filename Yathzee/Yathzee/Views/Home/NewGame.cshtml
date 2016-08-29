@@ -1,0 +1,73 @@
+﻿@model ViewModels.NewGameViewModel
+@{
+    ViewBag.Title = "Start a new game";
+}
+
+<h2>Start a new game</h2>
+<div class="row">
+    <div class="col-md-6">
+        <h3>Challenge a friend</h3>
+        @if (Model.PlayersInfo == null)
+        {
+            <p>You haven't played any games yet. </p>
+        }
+        else
+        {
+            using (Html.BeginForm("NewGame", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <div class="form-group">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        @Html.LabelFor(m => m.PlayersInfo, new { @class = "control-label" })
+                        @foreach (var player in Model.PlayersInfo)
+                        {
+                            <div class="col-md-1"></div>
+                            <div class="col-md-11 radioButton">
+                                @Html.RadioButtonFor(m => m.EmailInviter, player.Email, true) @player.Name
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-default" value="Challenge" />
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <div class="col-md-6">
+        <h3>Game against a new player</h3>
+        <section id="loginForm">
+            @using (Html.BeginForm("NewGame", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11">
+                        @Html.LabelFor(m => m.EmailInviter, new { @class = "control-label" })
+                        <div>
+                            @Html.TextBoxFor(m => m.EmailInviter, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.EmailInviter, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Challenge" class="btn btn-default" />
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+<div class="row">
+    @if (TempData["GameCreated"] != null)
+    {
+        <div class="alert alert-success" role="alert">@TempData["GameCreated"]</div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger" role="alert">@TempData["Error"]</div>
+    }
+</div>

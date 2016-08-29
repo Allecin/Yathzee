@@ -1,0 +1,13 @@
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\bin\Debug\BL.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\bin\Debug\BL.pdb
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\bin\Debug\DAL.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\bin\Debug\Domain.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\bin\Debug\EntityFramework.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\bin\Debug\DAL.pdb
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\bin\Debug\Domain.pdb
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\bin\Debug\EntityFramework.xml
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\obj\Debug\BL.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\obj\Debug\BL.pdb
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\bin\Debug\ViewModels.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\BL\bin\Debug\ViewModels.pdb

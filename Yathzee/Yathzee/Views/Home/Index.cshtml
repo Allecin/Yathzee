@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Yathzee</h1>
+    <p class="lead">Welcome to the awesome game of Yathzee! Create an account and start playing against your friends.</p>
+</div>
+
+<div class="row">
+    
+    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10">
+            <div class="col-md-4">
+                <div class="jumbotron">
+                    <h2>New game</h2>
+                    <p>Challenge a friend to a new game of yathzee!</p>
+                    @Html.ActionLink("New Game", "NewGame", "Home", new { @class="btn btn-primary btn-lg"})
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="jumbotron">
+                    <h2>My games</h2>
+                    <p>Continue a game or view your other games!</p>
+                    @Html.ActionLink("Games", "MyGames", "Home", new { @class = "btn btn-primary btn-lg" })
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="jumbotron">
+                    <h2>Profile</h2>
+                    <p>View statistics or change your profile</p>
+                    @Html.ActionLink("Go", "Profile", "Home", new { otherPlayerId = 0 }, new { @class = "btn btn-primary btn-lg" })
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">
+        </div>
+    }
+    else
+    {
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8">
+            <ul>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-primary btn-center btn-first" })</ul>
+            <br />
+            <ul>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-primary btn-center btn-first" })</ul>
+        </div>
+        <div class="col-md-2">
+        </div>
+    }
+</div>

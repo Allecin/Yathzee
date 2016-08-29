@@ -1,0 +1,322 @@
+﻿@model ViewModels.GameViewModel
+@{
+    ViewBag.Title = "Game";
+    var played = false;
+
+    var dice1Value = 0;
+    var dice2Value = 0;
+    var dice3Value = 0;
+    var dice4Value = 0;
+    var dice5Value = 0;
+}
+
+<h2>Yathzee</h2>
+<div id="turn" class="row">
+    @if (Model.MyTurn && !played)
+    {
+        <div class="alert alert-success" role="alert">It's your turn!</div>
+    }
+    else
+    {
+        <div class="alert alert-info" role="alert">It's @Model.TurnName turn.</div>
+    }
+</div>
+<div id="game" class="row">
+    <div id ="play" class="col-md-7">
+        <div id="dices"class="row">
+            <h3>Dices</h3>
+            <div class="col-md-2">
+                <strong id="dice0">@Model.Dices[0].Number</strong>             
+                    @switch (@Model.Dices[0].Number)
+                    {
+                        case 1: <img id="pd0vd1" src="~/Content/dices/dice1.png" />;
+                            dice1Value = 1;
+                            break;
+                        case 2: <img id="pd0vd2" src="~/Content/dices/dice2.png" />;
+                            dice1Value = 2;
+                            break;
+                        case 3: <img id="pd0vd3" src="~/Content/dices/dice3.png" />;
+                            dice1Value = 3;
+                            break;
+                        case 4: <img id="pd0vd4" src="~/Content/dices/dice4.png" />;
+                            dice1Value = 4;
+                            break;
+                        case 5: <img id="pd0vd5" src="~/Content/dices/dice5.png" />;
+                            dice1Value = 5;
+                            break;
+                        case 6: <img id="pd0vd6" src="~/Content/dices/dice6.png" />;
+                            dice1Value = 6;
+                            break;
+                    }
+                <input type="button" id="ice0" class="btn btn-info" value="Lock" onclick="keep(0, @dice1Value)" />
+            </div>
+            <div class="col-md-2">
+                <strong id="dice1">@Model.Dices[1].Number</strong>
+                    @switch (@Model.Dices[1].Number)
+                    {
+                        case 1: <img id="pd1vd1" src="~/Content/dices/dice1.png" />;
+                            dice2Value = 1;
+                            break;
+                        case 2: <img id="pd1vd2" src="~/Content/dices/dice2.png" />;
+                            dice2Value = 2;
+                            break;
+                        case 3: <img id="pd1vd3" src="~/Content/dices/dice3.png" />;
+                            dice2Value = 3;
+                            break;
+                        case 4: <img id="pd1vd4" src="~/Content/dices/dice4.png" />;
+                            dice2Value = 4;
+                            break;
+                        case 5: <img id="pd1vd5" src="~/Content/dices/dice5.png" />;
+                            dice2Value = 5;
+                            break;
+                        case 6: <img id="pd1vd6" src="~/Content/dices/dice6.png" />;
+                            dice2Value = 6;
+                            break;
+                    }
+                <input type="button" id="ice1" class="btn btn-info" value="Lock" onclick="keep(1, @dice2Value)" />
+            </div>
+            <div class="col-md-2">
+                <strong id="dice2">@Model.Dices[2].Number</strong>
+                    @switch (@Model.Dices[2].Number)
+                    {
+                        case 1: <img id="pd2vd1" src="~/Content/dices/dice1.png" />;
+                            dice3Value = 1;
+                            break;
+                        case 2: <img id="pd2vd2" src="~/Content/dices/dice2.png" />;
+                            dice3Value = 2;
+                            break;
+                        case 3: <img id="pd2vd3" src="~/Content/dices/dice3.png" />;
+                            dice3Value = 3;
+                            break;
+                        case 4: <img id="pd2vd4" src="~/Content/dices/dice4.png" />;
+                            dice3Value = 4;
+                            break;
+                        case 5: <img id="pd2vd5" src="~/Content/dices/dice5.png" />;
+                            dice3Value = 5;
+                            break;
+                        case 6: <img id="pd2vd6" src="~/Content/dices/dice6.png" />;
+                            dice3Value = 6;
+                            break;
+                    }
+                <input type="button" id="ice2" class="btn btn-info" value="Lock" onclick="keep(2, @dice3Value)" />
+            </div>
+            <div class="col-md-2">
+                <strong id="dice3">@Model.Dices[3].Number</strong>
+                    @switch (@Model.Dices[3].Number)
+                    {
+                        case 1: <img id="pd3vd1" src="~/Content/dices/dice1.png" />;
+                            dice4Value = 1;
+                            break;
+                        case 2: <img id="pd3vd2" src="~/Content/dices/dice2.png" />;
+                            dice4Value = 2;
+                            break;
+                        case 3: <img id="pd3vd3" src="~/Content/dices/dice3.png" />;
+                            dice4Value = 3;
+                            break;
+                        case 4: <img id="pd3vd4" src="~/Content/dices/dice4.png" />;
+                            dice4Value = 4;
+                            break;
+                        case 5: <img id="pd3vd5" src="~/Content/dices/dice5.png" />;
+                            dice4Value = 5;
+                            break;
+                        case 6: <img id="pd3vd6" src="~/Content/dices/dice6.png" />;
+                            dice4Value = 6;
+                            break;
+                    }
+                <input type="button" id="ice3" class="btn btn-info" value="Lock" onclick="keep(3, @dice4Value)" />
+            </div>
+            <div class="col-md-2" >
+                <strong id="dice4">@Model.Dices[4].Number</strong>
+                    @switch (@Model.Dices[4].Number)
+                    {
+                        case 1: <img id="pd4vd1" src="~/Content/dices/dice1.png" />;
+                            dice5Value = 1;
+                            break;
+                        case 2: <img id="pd4vd2" src="~/Content/dices/dice2.png" />;
+                            dice5Value = 2;
+                            break;
+                        case 3: <img id="pd4vd3" src="~/Content/dices/dice3.png" />;
+                            dice5Value = 3;
+                            break;
+                        case 4: <img id="pd4vd4" src="~/Content/dices/dice4.png" />;
+                            dice5Value = 4;
+                            break;
+                        case 5: <img id="pd4vd5" src="~/Content/dices/dice5.png" />;
+                            dice5Value = 5;
+                            break;
+                        case 6: <img id="pd4vd6" src="~/Content/dices/dice6.png" />;
+                            dice5Value = 6;
+                            break;
+                    }
+                <input type="button" id="ice4" class="btn btn-info" value="Lock" onclick="keep(4, @dice5Value)" />
+            </div>
+
+            @if (Model.MyTurn && !played)
+                        {
+                <div class="col-md-2">
+                    <strong id="rollsLeft">Rolls left 3</strong>
+                    <input type="button" class="btn btn-success" id="roll" value="ROLL" onclick="roll(@dice1Value, @dice2Value, @dice3Value, @dice4Value, @dice5Value)" />
+                </div>
+            }          
+        </div>
+
+        <div id="possibleScores"class="row">
+            <h3>Possible scores</h3>
+            <div id="posSco">
+                @Html.Partial("_UpdatePossibleScores", Model.Options, new ViewDataDictionary { { "GameId", Model.GameId } })
+            </div>
+        </div>
+    </div>
+    <div id="score" class="col-md-5">
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Sections</th>
+                        <th>@Model.MyName</th>
+                        <th>@Model.OpponentName</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td>UPPER SECTION</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Only Aces</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreAces</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreAces</td>
+                    </tr> 
+                    <tr>
+                        <td>Only Twos</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreTwos</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreTwos</td>
+                    </tr> 
+                    <tr>
+                        <td>Only Threes</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreThrees</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreThrees</td>
+                    </tr> 
+                    <tr>
+                        <td>Only Fours</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreFours</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreFours</td>
+                    </tr> 
+                    <tr>
+                        <td>Only Fives</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreFives</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreFives</td>
+                    </tr> 
+                    <tr>
+                        <td>Only Sixes</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreSixes</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreSixes</td>
+                    </tr> 
+                    <tr>
+                        <td>TOTAL</td>
+                        <td>@Model.GameScoresExtra[0].NumberTotal</td>
+                        <td>@Model.GameScoresExtra[1].NumberTotal</td>
+                    </tr>     
+                    <tr>
+                        <td>+ 63 = 35 Bonus</td>
+                        <td>@Model.GameScoresExtra[0].Bonus</td>
+                        <td>@Model.GameScoresExtra[1].Bonus</td>
+                    </tr> 
+                    <tr>
+                        <td>UPPER TOTAL</td>
+                        <td>@Model.GameScoresExtra[0].UpperTotal</td>
+                        <td>@Model.GameScoresExtra[1].UpperTotal</td>
+                    </tr>        
+                </tbody>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td>LOWER SECTION</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3 of a kind Total</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreThreeOfAKind</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreThreeOfAKind</td>
+                    </tr>
+                    <tr>
+                        <td>4 of a kind Total</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreFourOfAKind</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreFourOfAKind</td>
+                    </tr>
+                    <tr>
+                        <td>Full House = 25</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreFullHouse</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreFullHouse</td>
+                    </tr>
+                    <tr>
+                        <td>Small Straight = 30</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreSmallStraight</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreSmallStraight</td>
+                    </tr>
+                    <tr>
+                        <td>Large Straight = 40</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreLargeStraight</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreLargeStraight</td>
+                    </tr>
+                    <tr>
+                        <td>YATHZEE</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreYathzee</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreYathzee</td>
+                    </tr>
+                    <tr>
+                        <td>Chance TOTAL</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreChance</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreChance</td>
+                    </tr>
+                    <tr>
+                        <td>LOWER TOTAL</td>
+                        <td>@Model.GameScoresExtra[0].LowerTotal</td>
+                        <td>@Model.GameScoresExtra[1].LowerTotal</td>
+                    </tr>   
+                    <tr>
+                        <td>UPPER TOTAL</td>
+                        <td>@Model.GameScoresExtra[0].UpperTotal</td>
+                        <td>@Model.GameScoresExtra[1].UpperTotal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td>UPPER TOTAL</td>
+                        <td>@Model.GameScoresExtra[0].GameScore.ScoreTotal</td>
+                        <td>@Model.GameScoresExtra[1].GameScore.ScoreTotal</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
+<div id="info" class="row">
+    @if (TempData["Error"] != null)
+                    {
+        <div class="alert alert-danger" role="alert">@TempData["Error"]</div>
+    }
+    @if (@played)
+                {
+        <div class="alert alert-success" role="alert">You're choice has been saved. @Model.OpponentName turn.</div>
+    }
+</div>
+
+<script>
+    window.onload = function ()
+                {
+                    reset();
+                };
+</script>

@@ -1,0 +1,27 @@
+﻿@using ViewModels
+@{
+    ViewBag.Title = "Indexx";
+    var nummer = "4";
+}
+
+<h2>Indexx</h2>
+
+@switch (nummer)
+{
+    case "1": <img class="1" src="~/Content/dices/dice1.png" />;
+        break;
+    case "2": <img class="2" src="~/Content/dices/dice2.png" />;
+        break;
+    case "3": <img class="3" src="~/Content/dices/dice3.png" />;
+        break;
+    case "4": <img class="4" src="~/Content/dices/dice4.png" />;
+        break;
+    case "5": <img class="5" src="~/Content/dices/dice5.png" />;
+        break;
+    case "6": <img class="6" src="~/Content/dices/dice6.png" />;
+        break;
+}
+
+<input type="button" id="ice4" class="btn btn-primary" value="Lock dice" onclick="lolebol(@nummer)" />
+
+<img id="4" src="~/Content/dices/dice4.png" />

@@ -1,0 +1,105 @@
+﻿@model ViewModels.MyGamesViewModel
+@{
+    ViewBag.Title = "My games";
+}
+
+    <h2>My games</h2>
+    <div>
+        <fieldset>
+            <legend>Challenged by friends</legend>
+            @if (Model.MemberGames.Count() == 0)
+            {
+                <p>You haven't been challenged for a new game yet.</p>
+            }
+            else
+            {
+                foreach (var gameInfo in Model.MemberGames)
+                {
+                    <div >
+                        <div class="col-md-7">
+                            <ul>Challenged by @gameInfo.OpponentName . </ul>
+                        </div>
+                        <div class="col-md-5">
+                            @Html.ActionLink("Start game", "ShowGame", "Game", new { gameId = gameInfo.GameId, playerId = gameInfo.PlayerId, turnAtPlayer = gameInfo.PlayerTurn, newGame = true }, new { @class = "btn btn-success" })
+                        </div>
+                    </div>
+                }
+            }
+        </fieldset>
+        <fieldset>
+            <legend>Games you started</legend>
+            @if (Model.InviterGames.Count() == 0)
+            {
+                <p>You haven't started any games yet.</p>
+            }
+            else
+            {
+                foreach (var gameInfo in Model.InviterGames)
+                {
+                    <div class="col-md-7">
+                        <ul>@gameInfo.OpponentName has not accepted your challenge yet.</ul>
+                    </div>
+                    <div class="col-md-5">
+                        @Html.ActionLink("Watch game", "ShowGame", "Game", new { gameId = gameInfo.GameId, playerId = gameInfo.PlayerId, turnAtPlayer = gameInfo.PlayerTurn, newGame = true }, new { @class = "btn btn-info" })
+                    </div>
+                }
+            }
+        </fieldset>
+        <fieldset>
+            <legend>Ongoing games</legend>
+            @if (Model.OnGoingGames.Count() == 0)
+            {
+                <p>On this moment you aren't playing any games.</p>
+            }
+            else
+            {
+                foreach (var gameInfo in Model.OnGoingGames)
+                {
+                    if (gameInfo.PlayerTurn)
+                    {
+                        <div class="col-md-7">
+                            <ul>Game against @gameInfo.OpponentName , it's your turn. </ul>
+                        </div>
+                        <div class="col-md-5">
+                            @Html.ActionLink("Continue game", "ShowGame", "Game", new { gameId = gameInfo.GameId, playerId = gameInfo.PlayerId, turnAtPlayer = gameInfo.PlayerTurn, newGame = false }, new { @class = "btn btn-success" })
+                       </div>
+                    }
+                    else
+                    {
+                        <ul>Game against @gameInfo.OpponentName , it's @gameInfo.OpponentName turn. </ul>
+                    }
+                }
+            }
+        </fieldset>
+        <fieldset>
+            <legend>Previous games</legend>
+            @if (Model.EndedGames.Count() == 0)
+            {
+                <p>You haven't played any games yet.</p>
+            }
+            else
+            {
+                foreach (var gameInfo in Model.EndedGames)
+                {
+                    if (gameInfo.PlayerWinner)
+                    {
+                        <div class="col-md-7">
+                            <ul>Game against @gameInfo.OpponentName. You won!</ul>
+                        </div>
+                        <div class="col-md-5">
+                            @Html.ActionLink("See result", "ShowEndedGame", "Game", new { gameId = gameInfo.GameId, playerId = gameInfo.PlayerId}, new { @class = "btn btn-info" })
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-md-7">
+                            <ul>Game against @gameInfo.OpponentName. @gameInfo.OpponentName won.</ul>
+                        </div>
+                        <div class="col-md-5">
+                            @Html.ActionLink("See result", "ShowEndedGame", "Game", new { gameId = gameInfo.GameId, playerId = gameInfo.PlayerId }, new { @class = "btn btn-info" })
+                        </div>
+                    }
+                }
+            }
+        </fieldset>
+    </div>

@@ -1,0 +1,41 @@
+﻿
+body {
+  /*background: -webkit-linear-gradient(left, #FFE047, #FF6D6D);
+  background: linear-gradient(to right, #FFE047, #FF6D6D);
+  //color: #FFFFFF;
+  font-size: 15px;
+  font-family: "Lucida Console", Monaco, monospace;*/
+}
+
+.btn-center {
+    width: 100%;
+}
+
+.radioButton {
+    padding-left: 5%;
+    font-size: 110%;
+}
+
+.myJumbotron {
+  padding: 20px;
+  /*margin-bottom: 30px;*/
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #C4C1FF;
+}
+
+.btn-first {
+    font-size: 20px;
+    background-color: rgba(66,139,202,0.85);
+}
+
+img {
+  display: block;
+  max-width:110%;
+  max-height:110%;
+  width: auto;
+  height: auto;
+}
+

@@ -1,0 +1,7 @@
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\ViewModels\bin\Debug\ViewModels.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\ViewModels\bin\Debug\ViewModels.pdb
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\ViewModels\bin\Debug\Domain.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\ViewModels\bin\Debug\Domain.pdb
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\ViewModels\obj\Debug\ViewModels.csprojResolveAssemblyReference.cache
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\ViewModels\obj\Debug\ViewModels.dll
+C:\Users\Joachim\documents\visual studio 2015\Projects\Yathzee\ViewModels\obj\Debug\ViewModels.pdb
